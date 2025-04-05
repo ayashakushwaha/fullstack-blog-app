@@ -7,7 +7,7 @@ import { redirect } from 'next/navigation'
 
 export default function Home() {
   const [loading, setLoading] = useState(false)
-  const sessionToken = sessionStorage.getItem("token")!
+  const sessionToken = sessionStorage?.getItem("token")!
   if (sessionToken) {
     redirect("/dashboard")
   }
