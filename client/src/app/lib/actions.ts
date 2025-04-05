@@ -2,7 +2,7 @@
 export async function handleSignUp(data: FormData) {
     let resMessage = ""
     try {
-        const response = await fetch("http://localhost:3000/api/auth/signup", {
+        const response = await fetch("http://localhost:4000/api/auth/signup", {
             method: "POST",
             body: data
         })
@@ -21,7 +21,7 @@ export async function handleLogIn(data: any) {
     let token = null;
     try {
       
-        const response = await fetch("http://localhost:3000/api/auth/login", {
+        const response = await fetch("http://localhost:4000/api/auth/login", {
             method: "POST",
             body: JSON.stringify(data),
             headers: { "Content-Type": "application/json" }
@@ -43,7 +43,7 @@ export async function handleLogIn(data: any) {
 
 export async function CreateNewBlog(data: FormData, token: string) {
     try {
-        const response = await fetch("http://localhost:3000/api/blogs", {
+        const response = await fetch("http://localhost:4000/api/blogs", {
             method: "POST",
             body: data,
             headers: { Authorization: "Bearer " + token }
@@ -61,7 +61,7 @@ export async function CreateNewBlog(data: FormData, token: string) {
 
 export async function getBlogs(token: string) {
     try {
-        const response = await fetch("http://localhost:3000/api/blogs", {
+        const response = await fetch("http://localhost:4000/api/blogs", {
             headers: { Authorization: "Bearer " + token }
         })
 
@@ -78,7 +78,7 @@ export async function getBlogs(token: string) {
 
 export async function getBlogById(id: number, token: string) {
     try {
-        const response = await fetch(`http://localhost:3000/api/blogs/${id}`, {
+        const response = await fetch(`http://localhost:4000/api/blogs/${id}`, {
             headers: { Authorization: "Bearer " + token }
         })
 
@@ -95,7 +95,7 @@ export async function getBlogById(id: number, token: string) {
 
 export async function deleteBlog(id: number, token: string) {
     try {
-        const response = await fetch(`http://localhost:3000/api/blogs/${id}`, {
+        const response = await fetch(`http://localhost:4000/api/blogs/${id}`, {
             headers: { Authorization: "Bearer " + token },
             method: "DELETE"
         })
@@ -111,7 +111,7 @@ export async function deleteBlog(id: number, token: string) {
 
 export async function EditBlogById(id: string, token: string, data: FormData) {
     try {
-        const response = await fetch(`http://localhost:3000/api/blogs/${id}`, {
+        const response = await fetch(`http://localhost:4000/api/blogs/${id}`, {
             headers: { Authorization: "Bearer " + token },
             method: "PATCH",
             body: data
@@ -129,7 +129,7 @@ export async function EditBlogById(id: string, token: string, data: FormData) {
 
 export async function getUser(token: string) {
     try {
-        const response = await fetch(`http://localhost:3000/api/users/me`, {
+        const response = await fetch(`http://localhost:4000/api/users/me`, {
             headers: { Authorization: "Bearer " + token },
         })
 

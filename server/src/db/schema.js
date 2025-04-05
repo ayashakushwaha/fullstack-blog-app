@@ -20,7 +20,7 @@ const blogs = pgTable("blogs", {
   id: serial("id").primaryKey(),
   title: varchar("title", { length: 255 }).notNull(),
   content: text("content").notNull(),
-  image: text("image"), // Store image as Base64 string
+  image: text("image"),
   user_id: integer("user_id")
     .references(() => users.id)
     .notNull(),
