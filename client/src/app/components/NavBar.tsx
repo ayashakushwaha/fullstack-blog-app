@@ -1,6 +1,5 @@
 "use client"
 import Link from "next/link";
-import UserProfile from "./userProfile";
 import { useEffect, useState } from "react";
 import { getUser } from "../lib/actions";
 import { redirect } from "next/navigation";

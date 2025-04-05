@@ -2,7 +2,6 @@
 import Image from "next/image"
 import { redirect } from "next/navigation"
 import NavBar from "../components/NavBar"
-import Blog from "../components/Blog"
 import { useEffect, useState } from "react"
 import { deleteBlog, getBlogById, getBlogs, getUser } from "../lib/actions"
 import Link from "next/link"
