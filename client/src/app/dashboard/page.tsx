@@ -45,12 +45,15 @@ export default function BlogList() {
                 <div className="space-y-8 justify-items-center">
                     <div className="my-8 text-4xl font-extrabold leading-none text-blue-100">Blog List</div>
                     {blogList.map((blog) =>
-                        <div className="flex w-2xl bg-blue-900 rounded-lg  p-6">
-                            <img className="w-50" src={blog.image} alt="" />
+                        <div className="flex w-2xl h-70 bg-blue-900 rounded-lg  p-6">
+                            <img className="w-50 h-50" src={blog.image} alt="" />
                             <div className="mx-15 flex flex-col ">
                                 <div className="flex-auto space-y-3">
                                     <h5 className=" text-2xl font-bold tracking-tight text-white ">{blog.title}</h5>
-                                    <p className="font-normal text-gray-400 ">{blog.content}</p>
+                                    <p className="font-normal text-gray-400 " style={{
+                                        width: "350px", height: "100px", textOverflow: "ellipsis", whiteSpace: "nowrap",
+                                        overflow: "hidden"
+                                    }}>{blog.content}</p>
                                     <Link href={`/blog/${blog.id}`} className="text-sm font-medium text-white underline hover:text-blue-300">
                                         Read more...
                                     </Link>
